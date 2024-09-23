@@ -10,6 +10,7 @@ import AddBike from './pages/adminpage/AddBike'
 import EditBike from './pages/adminpage/EditBike'
 import DeleteBike from './pages/adminpage/DeleteBike'
 import Users from './pages/adminpage/Users'
+import MakePayment from './pages/userpage/MakePayment'
 
 const App = () => {
   return (
@@ -21,6 +22,8 @@ const App = () => {
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
 
+        <Route path="/payment" element={<MakePayment/>}/>
+
 
         <Route path="/admin" element= {<AdminPanel/>}/>
         <Route path="/adminlogin" element= {<AdminLogin/>}/>
@@ -29,6 +32,7 @@ const App = () => {
         <Route path="/admin/user" element= {<Users/>}/>
         <Route path="/admin/edit/:id" element= {<EditBike/>}/>
         <Route path="/admin/delete/:id" element= {<DeleteBike/>}/>
+
       </Routes>
       
       
