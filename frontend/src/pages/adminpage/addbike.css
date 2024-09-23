@@ -1,6 +1,123 @@
-.admin-cont {
-    margin-left: 270px; /* leave space on riight */
-    padding: 60px 100px;
-    font-family: 'Poppins', sans-serif;
-    background-color:transparent;
+/* General container styling for the form when the navbar is on the left */
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    font-family: "Poppins", sans-serif;
+    width: calc(100% - 250px); /* Adjust width by subtracting the navbar width */
+    margin-left: 250px; /* Shift the form to the right to account for the navbar */
+    box-sizing: border-box; /* Ensure padding and width are calculated correctly */
+}
+
+/* Main form container styling */
+.container {
+    position: relative;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    max-width: 100%;
+    background: #fff;
+    padding: 45px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; 
+    width: 50%;
+}
+
+/* Hover effect for form container */
+.container:hover {
+    transform: translateY(-5px); 
+}
+
+/* Form heading styling */
+.container h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #018882;
+    text-align: center;
+}
+
+/* Form container margins */
+.container .form {
+    margin-top: 30px;
+}
+
+/* Input box styling */
+.form .input-box {
+    width: 100%; /* Full width for input-box container */
+    margin-top: 10px;
+}
+
+/* Label styling */
+.input-box label {
+    color: #333;
+    font-size: 1rem;
+}
+
+/* Remove increment/decrement arrows for number inputs */
+.form .input-box input[type="number"]::-webkit-outer-spin-button,
+.form .input-box input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Input field styling */
+.form .input-box input {
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    color: #707070;
+    margin-top: 3px;
+    border: 1px solid #8b8b8b;
+    border-radius: 6px;
+    padding: 0 15px;
+    transition: all 0.3s ease;
+}
+
+/* Input hover and focus effects */
+.form .input-box input:hover,
+.form .input-box input:focus {
+    border-color: #018882;
+    box-shadow: 0 0 5px rgba(1, 136, 130, 0.5); 
+}
+
+/* Button styling */
+.form button {
+    height: 55px;
+    width: 100%;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    margin-top: 30px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 500;
+    background-color: #018882;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+/* Button hover effect */
+.form button:hover {
+    background-color: #016f6a; 
+    transform: translateY(-3px); 
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
+}
+
+/* Error and loading message styling */
+.error-loading {
+    margin-top: 10px;
+    text-align: center;
+    color: red;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .main {
+        margin-left: 0; /* Reset margin for smaller screens */
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .container {
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
 }

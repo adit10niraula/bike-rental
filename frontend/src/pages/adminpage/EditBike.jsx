@@ -37,30 +37,31 @@ const EditBike = () => {
   
   return (
     <AdminContainer>
-    <div>
-        <h2>add Bike</h2>
+      <section className="main">
+    <div className="container">
+        <h2>Edit Bike</h2>
 
-        <form className='admin-food-form'  onSubmit={handleAddBikeItem}>
-      <div>
-      <label htmlFor="title">title</label> <br />
+        <form className='form'  onSubmit={handleAddBikeItem}>
+      <div className='input-box'>
+      <label htmlFor="title">Title</label> <br />
       <input type="text" name="title" id="title" value={name} onChange={(e)=>setname(e.target.value)} />
       </div>
-      <div>
-      <label htmlFor="serialNumber">serialNumber</label><br />
+      <div className='input-box'>
+      <label htmlFor="serialNumber">Serial Number</label><br />
       <input type="text" name="serialNumber" id="serialNumber" value={serialNumber} onChange={(e)=>setserialNumber(e.target.value)} />
       </div>
-      <div>
-      <label htmlFor="description">description</label><br />
+      <div className='input-box'>
+      <label htmlFor="description">Description</label><br />
       <input type="text" name="description" id="description" value={description} onChange={(e)=>setdescription(e.target.value)} />
       </div>
-      <div>
-      <label htmlFor="price">price</label> <br />
+      <div className='input-box'>
+      <label htmlFor="price">Price</label> <br />
       <input type="number" name="price" id="price" value={price} onChange={(e)=>setprice(e.target.value)} />
       
       </div>
      
-      <div>
-      <label htmlFor="biketype">bike type: </label> <br />
+      <div className='input-box'>
+      <label htmlFor="biketype">Bike type: </label> <br />
       <input type="text" name="biketype" id="biketype" value={bikeType} onChange={(e)=>setbikeType(e.target.value)} />
       {/* <select
         name="category"
@@ -77,11 +78,11 @@ const EditBike = () => {
       </select> */}
       
       </div>
-      <div>
-      <label htmlFor="image">image</label><br />
+      <div className='input-box'>
+      <label htmlFor="image">Image</label><br />
       <input type="file" name="image" id="image"   onChange={(e)=> setimage(e.target.files[0])} />
       </div>
-      <button type="submit">add fooditem</button>
+      <button type="submit">Edit Bike</button>
      </form>
 
      <div className="error-loading">
@@ -90,6 +91,7 @@ const EditBike = () => {
      </div>
       
     </div>
+    </section>
     </AdminContainer>
   )
 }
