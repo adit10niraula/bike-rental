@@ -24,29 +24,27 @@ const AdminLogin = () => {
     dispatch(adminlogin({ email, password }));
   };
   return (
-    <AdminContainer>
-    <div>
-        <h1>login</h1>
+    <section className='main'>
+    <div className='container'>
+        <h1>Admin Login</h1>
 
-        <form onSubmit={handleAdminLogin}>
-            
-            <input
-              type="email"
+        <form onSubmit={handleAdminLogin} className="form">
+        <div className='input-box'>
+            <input type="email"
               name="email"
               id="email"
               placeholder='example@gmail.com'
               value={email}
               onChange={(e) => setemail(e.target.value)}
             />
+        </div>
+
+        <div className='input-box'>
             
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder='enter your password'
-              value={password}
-              onChange={(e) => setpassword(e.target.value)}
+            <input type="password" name="password" id="password" placeholder='enter your password'
+              value={password} onChange={(e) => setpassword(e.target.value)}
             />
+        </div>
             <button type="submit">Login</button>
 
             <div className="error-loading">
@@ -57,7 +55,7 @@ const AdminLogin = () => {
           </form>
       
     </div>
-    </AdminContainer>
+    </section>
   )
 }
 
