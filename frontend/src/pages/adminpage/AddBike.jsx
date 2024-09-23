@@ -3,6 +3,7 @@ import AdminContainer from '../../component/container/AdminContainer'
 import { adminAddBikes } from '../../actions/AdminAction'
 import { useDispatch,useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import "./addbike.css"
 
 const AddBike = () => {
 
@@ -36,7 +37,7 @@ const AddBike = () => {
   
   return (
     <AdminContainer>
-    <div>
+    <div className='admin-cont'>
         <h2>add Bike</h2>
 
         <form className='admin-food-form'  onSubmit={handleAddBikeItem}>
