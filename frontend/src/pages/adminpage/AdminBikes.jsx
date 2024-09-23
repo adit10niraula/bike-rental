@@ -4,6 +4,7 @@ import { GetBike } from '../../actions/BIkeAction'
 import { useDispatch,useSelector } from 'react-redux'
 // import AllBikeLIst from '../../component/BikeComponent/AllBikeLIst'
 import { AdminBikeDelete } from '../../actions/AdminAction'
+import "./adminbike.css"
 
 
 const AdminBikes = () => {
@@ -29,31 +30,39 @@ const AdminBikes = () => {
   return (
     <AdminContainer>
       <div className='admin-cont'>
-        <h1>admincontainer</h1>
+  <h1>Admin Dashboard | Bike List</h1>
 
+  <table className="bike-list-table">
+    <thead>
+      <tr>
+        <th>Bike Name</th>
+        <th>Serial Number</th>
+        <th>Description</th>
+        <th>Bike Type</th>
+        <th>Price</th>
+        <th>Picture</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {bikes && bikes.map((bike, index) => (
+        <tr key={index}>
+          <td>{bike?.name}</td>
+          <td>{bike?.serialNumber}</td>
+          <td className="description" >{bike?.description}</td>
+          <td>{bike?.bikeType}</td>
+          <td>${bike?.price}</td>
+          <td><img src={bike?.image} alt="Bike" className="bike-image" /></td>
+          <td className="actions">
+            <button onClick={() => handleEdit(bike?._id)} className="edit-btn">Edit</button>
+            <button onClick={() => handleDelete(bike?._id)} className="delete-btn">Delete</button>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
 
-
-            {bikes && bikes.map((bike,index)=>(
-
-            <div className="adminBikes-content" key={index}>
-               <p className='name'>{bike?.name}</p>
-            <p className='serialNumber'>{bike?.serialNumber}</p>
-            <p className='description'>{bike?.description}</p>
-            <p className='bikeType'>{bike?.bikeType}</p>
-            <p className='price'>{bike?.price}</p>
-            <img src={bike?.image} className='image' alt="" />
-            <div className='adminbtn'>
-                <button onClick={()=>handleEdit(bike?._id)}>edit</button>
-                <button onClick={()=>handleDelete(bike?._id)}>delete</button>
-            </div>
-            
-
-            </div>
-            ))}
-
-
-
-    </div>
     </AdminContainer>
   
   )

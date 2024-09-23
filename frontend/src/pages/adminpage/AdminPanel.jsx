@@ -39,6 +39,7 @@ const AdminPanel = () => {
 
                 
         <div className="admin-panal-card">
+        <h2>Bikes</h2>
             <table className="admin-table">
             <thead>
               <tr>

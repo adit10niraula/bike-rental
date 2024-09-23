@@ -1,0 +1,114 @@
+
+.admin-cont {
+    margin-left: 270px; /* leave space on riight */
+    padding: 60px 100px;
+    font-family: 'Poppins', sans-serif;
+    background-color:transparent;
+}
+
+.admin-cont h1 {
+    font-size: 2rem;
+    color: #101A33;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+
+.bike-list-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+.bike-list-table th {
+    background-color: #f0f4ff;
+    color: #333;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: left;
+}
+
+
+.bike-list-table td {
+    padding: 15px;
+    font-size: 1rem;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.bike-list-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+
+.bike-image {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+  
+
+.actions {
+display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+
+.edit-btn, .delete-btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.edit-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #0056b3;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+
+@media (max-width: 768px) {
+    .admin-cont {
+    margin-left: 0;
+    padding: 15px;
+    }
+
+    .bike-list-table {
+    width: 100%;
+    font-size: 0.9rem;
+    }
+
+    .actions {
+    flex-direction: column;
+    gap: 5px;
+    }
+
+    .edit-btn, .delete-btn {
+    width: 100%;
+    text-align: center;
+    }
+}

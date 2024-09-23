@@ -6,7 +6,7 @@ const AdminNav = () => {
   return (
     <div className='admin-navbar'>
     <div className="admin-nav-logo">
-        <h1>Admin panel</h1>
+        <h1>Bike Rental</h1>
     </div>
     <div className="admin-nav-page-link">
         <p><Link className='link' to="">Dashboard</Link></p>
