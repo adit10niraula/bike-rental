@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './adminnav.css'
 
 const AdminNav = () => {
   return (
@@ -8,12 +9,11 @@ const AdminNav = () => {
         <h1>Admin panel</h1>
     </div>
     <div className="admin-nav-page-link">
-        <p><Link className='link' to="">Admin</Link></p>
+        <p><Link className='link' to="">Dashboard</Link></p>
         <p><Link className='link' to="">BIkes</Link></p>
         <p><Link className='link' to="">Users</Link></p>
         <p><Link className='link' to="">Add bikes</Link></p>
-
-        <p>logout</p>
+        <p className='logout'>Logout</p>
         
     </div>
   

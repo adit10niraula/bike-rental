@@ -1,0 +1,82 @@
+
+.admin-panel-cont {
+    margin-left: 270px;
+    padding: 20px;
+    font-family: "Poppins", sans-serif;
+}
+
+.admin-panel-cont h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #101A33;
+    margin-left: 6%;
+}
+
+.admin-panel-continer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.admin-panal-card {
+    background-color: #ffffff;
+    width: 100%; 
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-left: 6%;
+    padding: 20px;
+    font-size: 1rem;
+    color: #101A33;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+
+.admin-panal-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.admin-table thead {
+    background-color: #018882;
+    color: white;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+.admin-table tbody tr:hover {
+    background-color: #f1f1f1; /* Light gray background on hover */
+}
+
+
+@media (max-width: 768px) {
+    .admin-panel-cont {
+    margin-left: 0;
+    padding: 10px;
+    }
+
+    .admin-panel-continer {
+    flex-direction: column;
+    gap: 15px;
+    }
+
+    .admin-panal-card {
+    width: 100%;
+    height: auto;
+    }
+}

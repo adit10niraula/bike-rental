@@ -12,7 +12,7 @@ const AdminContainer = ({children}) => {
         <div>
         {children}
 
-        <Footer/>
+        {/* <Footer/> */}
         </div>
       
     </div>
