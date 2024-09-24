@@ -15,11 +15,11 @@
     position: relative;
     border: 1px solid #cccccc;
     border-radius: 8px;
-    max-width: 100%;
+    max-width: 60%;
     background: #fff;
     padding: 45px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease; 
+    
     width: 50%;
 }
 

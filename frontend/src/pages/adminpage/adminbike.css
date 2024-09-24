@@ -46,6 +46,12 @@
     background-color: #f9f9f9;
 }
 
+.bike-list-table .description {
+    max-width: 200px; /* Set the maximum width for description column */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add '...' when text overflows */
+}
 
 .bike-image {
     width: 80px;

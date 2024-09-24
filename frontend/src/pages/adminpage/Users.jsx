@@ -24,7 +24,6 @@ const Users = () => {
     <table className="admin-user-table">
       <thead>
         <tr>
-          <th>Profile Picture</th>
           <th>Name</th>
           <th>Email</th>
           <th>Address</th>
@@ -34,9 +33,6 @@ const Users = () => {
       <tbody>
         {UserData && UserData.map((user) => (
           <tr key={user._id} className='admin-singleuser'>
-            <td className="user-image-profile">
-              <img src={user.profile} alt="Profile" />
-            </td>
             <td>{user.name}</td>
             <td>{user.email}</td>
             <td>{user.address}</td>

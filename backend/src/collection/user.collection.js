@@ -43,7 +43,7 @@ const registerUser = AsyncHandler(async(req, res)=>{
     }
     const nameRegex = /^[A-Za-z\s]+$/;
 
-    if (!nameRegex.test(name) || !nameRegex.test(address)) {
+    if (!nameRegex.test(name) ) {
         throw new ApiError(400, "fields should contain only letters");
     }
 
