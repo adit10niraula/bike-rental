@@ -20,7 +20,6 @@ const Users = () => {
       },[]) 
   return (
     <AdminContainer>
-<<<<<<< HEAD
     <div className='admin-userlist-container'>
         <h1>user</h1>
          <div className='admin-user-container'>
@@ -37,31 +36,6 @@ const Users = () => {
            </div>
       ))}
       
-=======
-    <div className='umain'>
-        <h1>user</h1>
-        <div className='admin-user-container'>
-    <table className="admin-user-table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Address</th>
-          <th>Contact No</th>
-        </tr>
-      </thead>
-      <tbody>
-        {UserData && UserData.map((user) => (
-          <tr key={user._id} className='admin-singleuser'>
-            <td>{user.name}</td>
-            <td>{user.email}</td>
-            <td>{user.address}</td>
-            <td>{user.contact}</td>
-          </tr>
-        ))}
-      </tbody>
-      </table>
->>>>>>> 6798e5974bc4f84cca621d0b40c4143239581ca5
     </div>
 
     {/* <div>
