@@ -19,8 +19,8 @@ const Navbar = () => {
         </div>
         <div className="nav-page-link">
             <p><Link className='link' to="/">Home</Link></p>
-            <p><Link className='link' to="">BIkes</Link></p>
-            <p><Link className='link' to="">Adout us</Link></p>
+            <p><Link className='link' to="">Bikes</Link></p>
+            <p><Link className='link' to="">About us</Link></p>
             <p><Link className='link' to="">Contact us</Link></p>
           
         </div>
