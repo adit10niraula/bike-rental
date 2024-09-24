@@ -1,7 +1,7 @@
 import React from 'react'
 import './bikecomponent.css'
 
-const SingleComponent = ({bike}) => {
+const SingleComponent = ({bike,handleRent}) => {
   return (
     <div className='single-product-componetn'>
 
@@ -19,7 +19,7 @@ const SingleComponent = ({bike}) => {
             
         </div>
         
-            <button type="submit" >rent bike</button>
+            <button type="submit" onClick={()=>handleRent(bike?._id)} >rent bike</button>
     
 
         

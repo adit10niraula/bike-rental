@@ -12,14 +12,20 @@ const rentalSchema = new Schema({
         ref: 'Bike',  
         required: true,
     },
-    start_time: {
+    // start_time: {
+    //     type: Date,
+    //     required: true,
+    // },
+    // end_time: {
+    //     type: Date,
+    //     required: true,
+    // },
+
+     total_time: {
         type: Date,
         required: true,
     },
-    end_time: {
-        type: Date,
-        required: true,
-    },
+
     total_cost: {
         type: Number,
         required: true,

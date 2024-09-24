@@ -10,17 +10,18 @@ const Users = () => {
 
     const {UserData, loading, error} = useSelector((state)=> state.displayuser)
 
+    console.log("userdata sdfsdfds", UserData)
+
     useEffect(()=>{
 
         dispatch(displayUser())
-      },[])
+      },[]) 
   return (
     <AdminContainer>
-    <div>
+    <div className='admin-userlist-container'>
         <h1>user</h1>
          <div className='admin-user-container'>
-      {UserData && UserData.map((user)=>{
-        return <div key={user._id} className='admin-singleuser'>
+          {UserData && UserData.map((user)=>( <div key={user._id} className='admin-singleuser'>
           <div className="user-image-profile">
             <img  src={user.profile} alt="" />
           </div>
@@ -31,9 +32,18 @@ const Users = () => {
           
           
            </div>
-      })}
+      ))}
       
     </div>
+
+    {/* <div>
+      {UserData && UserData.map((item)=>(
+        <div> 
+           <p>{item?.name}</p>
+          
+           </div>
+      ))}
+    </div> */}
       
     </div>
     </AdminContainer>
