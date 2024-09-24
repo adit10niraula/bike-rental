@@ -42,7 +42,7 @@ const Register = () => {
 return (
     <UserContainer>
     <section className='main'>
-    <div className="container" >
+    <div className="rcontainer" >
         <h1>User Register</h1>
         <form className="form" onSubmit={handleRegister}>
             <div className='input-box'>

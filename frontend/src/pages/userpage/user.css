@@ -6,16 +6,16 @@
     justify-content: center;    
     padding: 60px;
     font-family: "Poppins", sans-serif;
-    width: 90%;
+    width: 50%;
     margin: auto;
 }
 
 
-.container {
+.rcontainer {
     position: relative;
     border: 1px solid #cccccc;
     border-radius: 6px;
-    max-width: 100%;
+    width: 26%;
     background: #fff;
     padding: 45px;
     border-radius: 8px;
@@ -23,9 +23,6 @@
     transition: transform 0.3s ease; 
 }
 
-.container:hover {
-    transform: translateY(-5px); 
-}
 
 .container h1 {
     font-size: 1.5rem;

@@ -22,9 +22,8 @@ const bikeSchema = new Schema({
     price: {
         type: Number,
         required: true,
-  }
-  ,
-   
+    } ,
+
     image: {
         type: String,
     }

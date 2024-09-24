@@ -64,7 +64,7 @@
     justify-content: center;
     gap: 30px;   
     font-family: "Poppins", sans-serif;
-    margin: 150px 0;
+    margin: 40px 0;
   }
   
   .single-product-componetn {
@@ -76,23 +76,23 @@
     height: 350px;
     border-radius: 3%;
     border: 1px solid #8b8b8b;
-    padding: 20px; /* Adds padding inside the component */
-    transition: box-shadow 0.3s ease; /* Transition for hover effect */
+    padding: 20px; 
+    transition: box-shadow 0.3s ease; 
   }
   
   .single-product-componetn:hover {
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Adds a shadow on hover */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); 
   }
   
   .single-product-componetn .image {
-    width: 100%; /* Make the image container take the full width */
+    width: 100%; 
     height: 200px;
   }
   
   .single-product-componetn .image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image scales properly */
+    object-fit: cover; 
   }
   
   .single-product-componetn .single-product-info {
@@ -102,7 +102,7 @@
   }
   
   .single-product-componetn .single-product-info p {
-    margin: 5px 0; /* Space between the info lines */
+    margin: 5px 0; 
   }
   
   .single-product-componetn .single-product-info p span {
@@ -125,10 +125,10 @@
     border-radius: 6px;
     font-weight: 500;
     background-color: #018882;
-    transition: background-color 0.3s ease; /* Smooth hover transition */
+    transition: background-color 0.3s ease; 
   }
   
   .single-product-componetn button:hover {
-    background-color: #016f6a; /* Darker color on hover */
+    background-color: #016f6a; 
   }
   

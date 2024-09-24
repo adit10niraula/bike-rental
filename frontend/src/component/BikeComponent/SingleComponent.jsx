@@ -11,7 +11,7 @@ const SingleComponent = ({bike,handleRent}) => {
         </div>
 
         <div className="single-product-info">
-            <p><span></span>{bike?.name} | <span>status: </span>{bike?.status}</p>
+            <p><span></span>{bike?.name}</p>
             {/* <p><span>serialNumber: </span>{bike?.serialNumber}</p>
             <p><span>description: </span>{bike?.description}</p>
             <p><span>type: </span>{bike?.bikeType}</p> */}

@@ -43,7 +43,7 @@ const registerUser = AsyncHandler(async(req, res)=>{
     }
     const nameRegex = /^[A-Za-z\s]+$/;
 
-    if (!nameRegex.test(name) || !nameRegex.test(address)) {
+    if (!nameRegex.test(name) ) {
         throw new ApiError(400, "fields should contain only letters");
     }
 
@@ -76,8 +76,8 @@ const registerUser = AsyncHandler(async(req, res)=>{
     let user
     try {
         user = await User.create({
-            email,
             name,
+            email,
             password,
             address,
             contact,
@@ -86,7 +86,7 @@ const registerUser = AsyncHandler(async(req, res)=>{
         
     } catch (error) {
         console.log("error creating user")
-        throw new ApiError(400, "error creating user")
+        throw new ApiError(400, "error creating user", error)
         
     }
 

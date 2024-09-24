@@ -3,6 +3,7 @@ import UserContainer from '../../component/container/UserContainer'
 import { UserLogin } from '../../actions/UserAction'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import "./user.css"
 
 
 const Login = () => {
@@ -30,7 +31,7 @@ const Login = () => {
     <UserContainer>
 
 <section className='main'>
-    <div className='container'>
+    <div className='rcontainer'>
         <h1>login</h1>
 
         <form className="form" onSubmit={handleLogin}>

@@ -45,8 +45,8 @@ const MakePayment = () => {
 
   return (
     <UserContainer>
-    <div>
-        <h1>make  payment</h1>
+    <div className="receipt-container">
+        <h1>Rent Bike</h1>
 
         <div className="payment-bike-info">
             <div className="bike-img">
@@ -60,7 +60,6 @@ const MakePayment = () => {
                 <p>bike type: {singlebike && singlebike?.bikeType}</p>
             </div>
         </div>
-
 
         <div className="payment-detail">
                     <div className="date-form">
@@ -76,7 +75,7 @@ const MakePayment = () => {
     </div>
 
     </UserContainer>
-  )
+)
 }
 
 export default MakePayment

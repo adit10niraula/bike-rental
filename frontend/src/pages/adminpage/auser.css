@@ -1,0 +1,119 @@
+
+
+.umain{
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    padding: 60px;
+    font-family: "Poppins", sans-serif;
+    margin: auto;
+}
+.admin-user-container {
+    padding: 20px;
+    font-family: "Poppins", sans-serif;
+    margin-left: 270px; /* Assuming there’s a left sidebar */
+  }
+  
+  /* Table styling */
+  .admin-user-table {
+    width: 100%;
+    border-collapse: collapse; /* Remove gaps between table cells */
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    table-layout: fixed; /* Ensures columns maintain a fixed width */
+  }
+  
+  /* Table header styling */
+  .admin-user-table thead {
+    background-color: #f0f4ff;
+  }
+  
+  .admin-user-table th {
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  /* Table row styling */
+  .admin-user-table td {
+    padding: 15px;
+    font-size: 1rem;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle; /* Ensures content is vertically aligned */
+    text-align: left;
+    word-wrap: break-word; /* Prevents text overflow for long content */
+  }
+  
+  /* Profile image styling */
+  .user-image-profile img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover; /* Ensures the image maintains its aspect ratio */
+    border-radius: 50%; /* Makes the profile picture circular */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+  }
+  
+  /* Hover effect for table rows */
+  .admin-user-table tbody tr:hover {
+    background-color: #f9f9f9; /* Light background when row is hovered */
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .admin-user-container {
+      margin-left: 0; /* Remove left margin on smaller screens */
+      padding: 10px;
+    }
+  
+    .admin-user-table th,
+    .admin-user-table td {
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+  
+    .user-image-profile img {
+      width: 40px;
+      height: 40px;
+    }
+  
+    /* Stack table columns for smaller screens */
+    .admin-user-table,
+    .admin-user-table thead,
+    .admin-user-table tbody,
+    .admin-user-table th,
+    .admin-user-table td,
+    .admin-user-table tr {
+      display: block;
+    }
+  
+    .admin-user-table tr {
+      margin-bottom: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  
+    .admin-user-table th {
+      display: none; /* Hide table headers on smaller screens */
+    }
+  
+    .admin-user-table td {
+      display: flex;
+      justify-content: space-between;
+      padding-left: 50%;
+      position: relative;
+    }
+  
+    .admin-user-table td:before {
+      content: attr(data-label); /* Display column names on mobile */
+      position: absolute;
+      left: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+  
