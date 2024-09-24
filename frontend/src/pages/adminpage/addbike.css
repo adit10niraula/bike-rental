@@ -6,7 +6,7 @@
     padding: 60px;
     font-family: "Poppins", sans-serif;
     width: calc(100% - 250px); 
-    margin-left: 250px; 
+    margin-left: 120px; 
     box-sizing: border-box;
 }
 
@@ -15,18 +15,13 @@
     position: relative;
     border: 1px solid #cccccc;
     border-radius: 8px;
-    max-width: 60%;
+    max-width: 30%;
     background: #fff;
     padding: 45px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    
-    width: 50%;
+    width: 100%;
 }
 
-
-.container:hover {
-    transform: translateY(-5px); 
-}
 
 
 .container h2 {

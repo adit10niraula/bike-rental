@@ -31,7 +31,7 @@ const Login = () => {
     <UserContainer>
 
 <section className='main'>
-    <div className='container'>
+    <div className='rcontainer'>
         <h1>login</h1>
 
         <form className="form" onSubmit={handleLogin}>

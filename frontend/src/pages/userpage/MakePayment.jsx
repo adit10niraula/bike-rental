@@ -1,45 +1,46 @@
 import React from 'react'
 import UserContainer from '../../component/container/UserContainer'
+//import AllBikeLIst from '../../component/BikeComponent/AllBikeLIst'
+import './makepay.css'
 
 const MakePayment = () => {
-  return (
+return (
     <UserContainer>
-    <div>
-        <h1>make  payment</h1>
+    <div className="receipt-container">
+        <h1>Rent Bike</h1>
 
         <div className="payment-bike-info">
             <div className="bike-img">
-                <img src="" alt="bike image" />
+            <img src="Tvs Raider.jpg" alt="Bike" />
             </div>
             <div className="bike-desc">
-                <p>name</p>
-                <p>serial number</p>
-                <p>description</p>
-                <p>price</p>
-                <p>bike type</p>
+            <p><strong>Name:</strong> Mountain Bike</p>
+            <p><strong>Serial Number:</strong> MBX12345</p>
+            <p><strong>Description:</strong> A sturdy and durable mountain bike suitable for rough terrain.</p>
+            <p><strong>Price:</strong> Rs. 500/hour</p>
+            <p><strong>Bike Type:</strong> Mountain</p>
             </div>
         </div>
-
 
         <div className="payment-detail">
             <div className="date-form">
-                <label htmlFor="from">from</label>
-                <input type="date" name="form" id="" />
+            <label htmlFor="from">From</label>
+            <input type="date" name="from" id="from" />
 
-                <label htmlFor="to">to</label>
-                <input type="date" name="to" id="" />
+            <label htmlFor="to">To</label>
+            <input type="date" name="to" id="to" />
 
-
-                <p>total price : <span>Rs : </span></p>
+            <p className="total-price">
+                Total Price: <span>Rs. 2000</span>
+            </p>
             </div>
 
-            <button>Make payment</button>
+            <button className="payment-btn">Make Payment</button>
         </div>
-      
     </div>
 
     </UserContainer>
-  )
+)
 }
 
 export default MakePayment
