@@ -76,8 +76,8 @@ const registerUser = AsyncHandler(async(req, res)=>{
     let user
     try {
         user = await User.create({
-            email,
             name,
+            email,
             password,
             address,
             contact,
@@ -86,7 +86,7 @@ const registerUser = AsyncHandler(async(req, res)=>{
         
     } catch (error) {
         console.log("error creating user")
-        throw new ApiError(400, "error creating user")
+        throw new ApiError(400, "error creating user", error)
         
     }
 
