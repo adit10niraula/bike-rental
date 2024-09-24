@@ -19,9 +19,9 @@ const Navbar = () => {
         </div>
         <div className="nav-page-link">
             <p><Link className='link' to="/">Home</Link></p>
-            <p><Link className='link' to="">Bikes</Link></p>
-            <p><Link className='link' to="">About us</Link></p>
-            <p><Link className='link' to="">Contact us</Link></p>
+            <p><Link className='link' to="/bikes">Bikes</Link></p>
+            <p><Link className='link' to="/about">About us</Link></p>
+            <p><Link className='link' to="/contact">Contact us</Link></p>
           
         </div>
         <div className='nav-login'>

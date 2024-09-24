@@ -11,6 +11,9 @@ import EditBike from './pages/adminpage/EditBike'
 import DeleteBike from './pages/adminpage/DeleteBike'
 import Users from './pages/adminpage/Users'
 import MakePayment from './pages/userpage/MakePayment'
+import AboutUs from './pages/userpage/AboutUs'
+import ContactUs from './pages/userpage/ContactUs'
+import Bikes from './pages/userpage/Bikes'
 
 const App = () => {
   return (
@@ -21,6 +24,10 @@ const App = () => {
         <Route path="/" element={<Home/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
+        <Route path="/bikes" element={<Bikes/>}/>
+        <Route path="/about" element={<AboutUs/>}/>
+        <Route path="/contact" element={<ContactUs/>}/>
+
 
         <Route path="/payment/:id" element={<MakePayment/>}/>
 
