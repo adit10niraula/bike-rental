@@ -6,7 +6,7 @@
     justify-content: center;    
     padding: 60px;
     font-family: "Poppins", sans-serif;
-    width: 90%;
+    width: 20px;
     margin: auto;
 }
 
@@ -15,7 +15,7 @@
     position: relative;
     border: 1px solid #cccccc;
     border-radius: 6px;
-    max-width: 100%;
+    width: 200px;
     background: #fff;
     padding: 45px;
     border-radius: 8px;
