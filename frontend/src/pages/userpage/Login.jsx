@@ -3,6 +3,7 @@ import UserContainer from '../../component/container/UserContainer'
 import { UserLogin } from '../../actions/UserAction'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import "./user.css"
 
 
 const Login = () => {
