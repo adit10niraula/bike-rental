@@ -1,6 +1,7 @@
 import mongoose, {Schema} from "mongoose";
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
+import dotenv from 'dotenv'
 
 const UserSchema = new Schema({
 
@@ -38,10 +39,8 @@ const UserSchema = new Schema({
                 return /\d{10}/.test(v);             }
         },
         message: props  => `${props.value} is not a valid contact number`
-        
+        },
 
-    },
-   
     refreshToken:{
         type:String
     }
@@ -76,36 +75,31 @@ UserSchema.methods.comparePassword = async function(password) {
 }
 
 UserSchema.methods.accessTokenGenerator = async function() {
-
-   try {
-     const token =  await jwt.sign({_id:this._id, name:this.name, email:this.email} 
-         ,process.env.ACCESS_TOKEN, {expiresIn:process.env.ACCESS_TOKEN_DATE})
-
-         return token;
-     
-   } catch (error) {
-    console.log("erro occur while generationg access token",error)
-    
-   }
-
-   
-}
-
-UserSchema.methods.refreshTokenGenerator = async function(){
-
     try {
-
-        const token = await jwt.sign({_id: this._id},
-             process.env.REFRESH_TOKEN, {expiresIn:process.env.REFRESH_TOKEN_DATE})
-
+        const token = await jwt.sign(
+            { _id: this._id, name: this.name, email: this.email },
+            process.env.ACCESS_TOKEN_SECRET,
+            { expiresIn: process.env.ACCESS_TOKEN_EXPIRATION }
+        );
         return token;
-        
     } catch (error) {
-        console.log("erro occur while generationg refresh token", error)
-
-        
-        
+        console.error("Error occurred while generating access token:", error);
+        throw new Error('Token generation failed');
     }
-}
+};
+
+UserSchema.methods.refreshTokenGenerator = async function() {
+    try {
+        const token = await jwt.sign(
+            { _id: this._id },
+            process.env.REFRESH_TOKEN_SECRET,  
+            { expiresIn: process.env.REFRESH_TOKEN_EXPIRATION }
+        );
+        return token;
+    } catch (error) {
+        console.error("Error occurred while generating refresh token:", error);
+        throw new Error('Token generation failed');
+    }
+};
 
 export const User = mongoose.model("User", UserSchema)

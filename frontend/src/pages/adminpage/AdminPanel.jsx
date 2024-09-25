@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react'
 import AdminContainer from '../../component/container/AdminContainer'
+import { GetBike } from '../../actions/BIkeAction'
+import { useDispatch,useSelector } from 'react-redux'
 import './adminpane.css'
-import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 const AdminPanel = () => {
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const {bikes} = useSelector((state)=> state.getBike)
 
   const {adminData, loading, error} = useSelector((state)=>state.adminlogin)
 
@@ -16,12 +19,11 @@ const AdminPanel = () => {
     }
   },[adminData, navigate])
 
-  // useEffect(()=>{
+  useEffect(()=>{
+    dispatch(GetBike())
 
-  //   if(!adminData){
-  //     navigate('/adminlogin')
-  //   }
-  // },[useSelector,navigate])
+  },[])
+
   return (
     <AdminContainer>
     <div className='admin-panel-cont'>
@@ -64,21 +66,18 @@ const AdminPanel = () => {
               <tr>
                 <th>Bike</th>
                 <th>Type</th>
-                <th>Availability</th>
+                <th>Price</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Mountain Bike</td>
-                <td>Off-road</td>
-                <td>Available</td>
-              </tr>
-              <tr>
-                <td>Electric Bike</td>
-                <td>Electric</td>
-                <td>Rented</td>
-              </tr>
-            </tbody>
+      {bikes && bikes.map((bike, index) => (
+        <tr key={index}>
+          <td>{bike?.name}</td>
+          <td>{bike?.bikeType}</td>
+          <td>${bike?.price}</td>
+        </tr>
+      ))}
+    </tbody>
           </table>
             </div>
         </div>

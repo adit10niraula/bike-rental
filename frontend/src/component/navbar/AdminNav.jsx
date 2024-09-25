@@ -22,8 +22,6 @@ const AdminNav = () => {
         <p><Link className='link' to="/admin/bikes">BIkes</Link></p>
         <p><Link className='link' to="/admin/user">Users</Link></p>
         <p><Link className='link' to="/admin/add">Add bikes</Link></p>
-
-
         <p className='logout' onClick={()=>handlelogout()}>Logout</p>
         
         
