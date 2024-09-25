@@ -1,4 +1,4 @@
-import { ADD_RENTAL_REQUEST, ADD_RENTAL_FAIL, ADD_RENTAL_SUCCESS } from "../constants/RentalConstants";
+import { ADD_RENTAL_REQUEST, ADD_RENTAL_FAIL, ADD_RENTAL_SUCCESS, ORDER_FAIL, ORDER_REQUEST, ORDER_SUCCESS } from "../constants/RentalConstants";
 
 
 
@@ -14,3 +14,17 @@ export const AddRentalReducer = (state={}, action)=>{
             return state
     }
 }
+
+export const GetOrderReducer = (state={}, action)=>{
+    switch(action.type){
+        case ORDER_REQUEST:
+            return {loading:true}
+        case ORDER_SUCCESS:
+            return {loading:false, orders:action.payload}
+        case ORDER_FAIL:
+            return {loading:false, error:action.payload}
+        default:
+            return state
+    }
+}
+

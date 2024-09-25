@@ -15,6 +15,7 @@ import AboutUs from './pages/userpage/AboutUs'
 import ContactUs from './pages/userpage/ContactUs'
 import Bikes from './pages/userpage/Bikes'
 import ConfirmPayment from './pages/userpage/ConfirmPayment'
+import Orders from './pages/adminpage/Orders'
 
 const App = () => {
   return (
@@ -30,12 +31,14 @@ const App = () => {
         <Route path="/contact" element={<ContactUs/>}/>
 
 
+
         <Route path="/payment/:id" element={<MakePayment/>}/>
         <Route path="/payment/:id/confirm/:id" element={<ConfirmPayment/>}/>
 
 
         <Route path="/admin" element= {<AdminPanel/>}/>
         <Route path="/adminlogin" element= {<AdminLogin/>}/>
+        <Route path="/admin/orders" element={<Orders/>}/>
         <Route path="/admin/bikes" element= {<AdminBikes/>}/>
         <Route path="/admin/add" element= {<AddBike/>}/>
         <Route path="/admin/user" element= {<Users/>}/>

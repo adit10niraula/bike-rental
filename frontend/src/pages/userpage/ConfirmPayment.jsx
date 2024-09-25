@@ -2,12 +2,15 @@ import React, { useEffect } from 'react'
 import UserContainer from '../../component/container/UserContainer'
 import { makepayment } from '../../actions/RentalAction'
 import { useDispatch } from 'react-redux'
+import { useParams } from 'react-router-dom'
 
 const ConfirmPayment = () => {
 
+  const {id} = useParams()
+
   const dispatch = useDispatch()
   useEffect(()=>{
-      dispatch(makepayment())
+      dispatch(makepayment(id))
   },[])
 
     const totalPrice = 10
