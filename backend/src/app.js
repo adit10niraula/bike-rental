@@ -4,10 +4,13 @@ import cookieParser from "Cookie-parser"
 
 const app = express()
 
-app.use(cors({
-    origin: process.env.CORS_ORIGIN,
-    credentials : true
-}))
+// app.use(cors({
+//     origin: process.env.CORS_ORIGIN,
+//     credentials : true
+// }))
+
+
+app.use(cors());
 
 app.use(express.json({limit:"16kb"}))
 app.use(express.urlencoded({extended: true, limit:"16kb"}))
@@ -22,7 +25,9 @@ app.use('./public/temp', express.static('public'));
 import userRouter  from "./router/user.router.js";
 import adminRouter from "./router/admin.router.js";
 import bikeRouter from "./router/bike.router.js";
-import rentalRouter from "./models/rental.model.js";
+// import rentalRouter from "./models/rental.model.js";
+// import rentalRouter from './router/rental.router.js'
+import rentalRouter from './router/rental.router.js'
 
 
 app.use('/api/v1/user', userRouter)

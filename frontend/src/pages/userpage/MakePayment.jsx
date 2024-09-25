@@ -15,6 +15,7 @@ const MakePayment = () => {
     const [fromDate, setFromDate] = useState('');
     const [toDate, setToDate] = useState('');
     const [totalPrice, setTotalPrice] = useState(0);
+    const {rental} = useSelector((state)=>state.addrental)
 
     
     const uuid = singlebike && singlebike?.uuid
@@ -43,16 +44,25 @@ const MakePayment = () => {
         calculatePrice();
     }, [fromDate, toDate, singlebike]);
 
+    useEffect(()=>{
+            if(rental){
+                navigate(`confirm/`)
+            }
+    },[rental,navigate])
     const handleRental = () => {
-        dispatch(AddRental(id, totalPrice))
+        if (totalPrice <= 0) {
+            alert("Total price must be greater than 0 to proceed.");
+            // Optionally, show an error message to the user
+            return;
+        }
+    
+        // Proceed with rental if validation passes
+        dispatch(AddRental(id, totalPrice));
         console.log("Total Price: Rs", totalPrice);
         
     };
 
-    if(totalPrice === 0){
-
-    }
-
+   
 
   return (
     <UserContainer>

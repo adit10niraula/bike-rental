@@ -1,17 +1,9 @@
 import express from 'express'
-import {createRental,    getAllRentals,    getRentalById,    updateRental,    deleteRental,}  from "../controllers/rental.controller"
-import { authjwt } from '../middleware/auth.middleware';
-const router = express.Router();
+const router = express.Router()
+import { authjwt } from '../middleware/auth.middleware.js'
+import { addToCart ,makePayment} from '../collection/rental.collection.js'
 
-// router.post('/rentals', createRental);
-router.route('/createrental').post(authjwt, createRental)      
-// router.get('/rentals', getAllRentals);  
-router.route('/getall').get(getAllRentals)         
-// router.get('/rentals/:id', getRentalById);
-router.route('/rental/:id').get(getRentalById)       
-// router.put('/rentals/:id', updateRental);
-router.route('/rentaldetail/:id').patch(updateRental)        
-// router.delete('/rentals/:id', deleteRental);
-router.route('/deleterental/:id').delete(deleteRental)     
+router.route('/create').post(authjwt, addToCart);
+router.route('/payment').get(makePayment);
 
 export default router

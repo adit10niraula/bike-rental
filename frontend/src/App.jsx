@@ -31,7 +31,7 @@ const App = () => {
 
 
         <Route path="/payment/:id" element={<MakePayment/>}/>
-        <Route path="/payment/:id/confirm" element={<ConfirmPayment/>}/>
+        <Route path="/payment/:id/confirm/:id" element={<ConfirmPayment/>}/>
 
 
         <Route path="/admin" element= {<AdminPanel/>}/>

@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import UserContainer from '../../component/container/UserContainer'
+import { makepayment } from '../../actions/RentalAction'
+import { useDispatch } from 'react-redux'
 
 const ConfirmPayment = () => {
+
+  const dispatch = useDispatch()
+  useEffect(()=>{
+      dispatch(makepayment())
+  },[])
 
     const totalPrice = 10
     const uuid= "sdkfjlsjflsd"

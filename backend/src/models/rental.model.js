@@ -1,48 +1,27 @@
 import mongoose, {Schema} from "mongoose";
+import { Bike } from "./bike.model.js";
+import { User } from "./user.model.js";
 
 
-const rentalSchema = new Schema({
-    user_id: {
-        type: Schema.Types.ObjectId,
-        ref: 'User', 
-        required: true,
+const rentSchema = new Schema({
+    
+    bike: {
+        type:Schema.Types.ObjectId,
+        ref:Bike
     },
-    bike_id: {
-        type: Schema.Types.ObjectId,
-        ref: 'Bike',  
-        required: true,
+    user: {
+        type:Schema.Types.ObjectId,
+        ref:User
     },
-    // start_time: {
-    //     type: Date,
-    //     required: true,
-    // },
-    // end_time: {
-    //     type: Date,
-    //     required: true,
-    // },
+   totalprice :{
+    type:String,
 
-     total_time: {
-        type: Date,
-        required: true,
-    },
+   },
+   payment:{
+    type:String,
+    default:"pending"
+   }
+}) 
 
-    total_cost: {
-        type: Number,
-        required: true,
-    },
-    payment_status:{
-        type:String,
-        default: "pending"
-    }
-});
 
-// Optionally, calculate total_cost automatically before saving, if desired
-rentalSchema.pre('save', function(next) {
-    const rentalDuration = (this.end_time - this.start_time) / (1000 * 60 * 60); // Calculate duration in hours
-    const hourlyRate = 10; // Example rate per hour, you can adjust it based on your business logic
-    this.total_cost = rentalDuration * hourlyRate;
-    next();
-});
-
-const Rental = mongoose.model('Rental', rentalSchema);
-export default Rental;
+export const Rent = mongoose.model("Rent",rentSchema )
