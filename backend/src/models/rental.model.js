@@ -30,6 +30,10 @@ const rentalSchema = new Schema({
         type: Number,
         required: true,
     },
+    payment_status:{
+        type:String,
+        default: "pending"
+    }
 });
 
 // Optionally, calculate total_cost automatically before saving, if desired

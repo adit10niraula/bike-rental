@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const Navbar = () => {
   const dispatch = useDispatch()
+  const {loginuser} = useSelector((state)=>state.loginuser)
   const {user} = useSelector((state)=>state.getcurrentuser)
 
   const handlelogout= ()=>{
@@ -25,7 +26,7 @@ const Navbar = () => {
           
         </div>
         <div className='nav-login'>
-          {user && user ? <p onClick={()=> handlelogout()}> <Link className='link' >logout</Link></p> : <><p><Link className='link' to="/login">login</Link></p>
+          {loginuser && loginuser ? <p onClick={()=> handlelogout()}> <Link className='link' >logout</Link></p> : <><p><Link className='link' to="/login">login</Link></p>
             <p> <Link className='link' to="/register">register</Link></p> </>}
             
             

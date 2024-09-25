@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import AdminContainer from '../../component/container/AdminContainer'
 import { adminAddBikes } from '../../actions/AdminAction'
 import { useDispatch,useSelector } from 'react-redux'
@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import "./addbike.css"
 
 const AddBike = () => {
-
+ 
   const [name, setname] = useState("")
   const [serialNumber, setserialNumber] = useState("")
   const [description, setdescription] = useState("")
@@ -16,6 +16,15 @@ const AddBike = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const {bikedata, loading, error} =useSelector((state)=>state.addBike)
+
+  const {adminData} = useSelector((state)=>state.adminlogin)
+
+  useEffect(()=>{
+    if(!adminData){
+      navigate('/adminlogin')
+    }
+
+  },[adminData, navigate])
 
 
   const handleAddBikeItem = async(e)=>{

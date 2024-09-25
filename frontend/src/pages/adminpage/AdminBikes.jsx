@@ -5,12 +5,22 @@ import { useDispatch,useSelector } from 'react-redux'
 // import AllBikeLIst from '../../component/BikeComponent/AllBikeLIst'
 import { AdminBikeDelete } from '../../actions/AdminAction'
 import "./adminbike.css"
+import { useNavigate } from 'react-router-dom'
 
 
 const AdminBikes = () => {
   const dispatch = useDispatch()
-
+  const navigate = useNavigate()
   const {bikes} = useSelector((state)=> state.getBike)
+  
+  const {adminData, loading, error} = useSelector((state)=>state.adminlogin)
+
+  useEffect(()=>{
+    if(!adminData){
+      navigate('/adminlogin')
+    }
+
+  },[adminData, navigate])
 
   useEffect(()=>{
     dispatch(GetBike())

@@ -14,6 +14,7 @@ import MakePayment from './pages/userpage/MakePayment'
 import AboutUs from './pages/userpage/AboutUs'
 import ContactUs from './pages/userpage/ContactUs'
 import Bikes from './pages/userpage/Bikes'
+import ConfirmPayment from './pages/userpage/ConfirmPayment'
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
 
 
         <Route path="/payment/:id" element={<MakePayment/>}/>
+        <Route path="/payment/:id/confirm" element={<ConfirmPayment/>}/>
 
 
         <Route path="/admin" element= {<AdminPanel/>}/>

@@ -29,7 +29,7 @@ export const Bikedetail = (id)=> async(dispatch)=>{
         const {data} = await axios.get(`/api/v1/bike/detail/${id}`)
 
        
-
+        console.log("bike detail",data)
         dispatch({type:BIKE_DETAIL_SUCCESS, payload:data.data})
         
     } catch (error) {

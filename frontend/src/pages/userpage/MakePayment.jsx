@@ -3,6 +3,7 @@ import UserContainer from '../../component/container/UserContainer'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Bikedetail } from '../../actions/BIkeAction'
+import { AddRental } from '../../actions/RentalAction'
 
 const MakePayment = () => {
     const dispatch = useDispatch()
@@ -15,6 +16,12 @@ const MakePayment = () => {
     const [toDate, setToDate] = useState('');
     const [totalPrice, setTotalPrice] = useState(0);
 
+    
+    const uuid = singlebike && singlebike?.uuid
+    const signature = singlebike && singlebike?.hashInBase64
+
+    console.log("otal" ,uuid,signature)
+
     console.log("singlebike",singlebike)
 
     useEffect(()=>{
@@ -23,11 +30,11 @@ const MakePayment = () => {
 
 
     const calculatePrice = () => {
-        if (fromDate && toDate && singlebike?.price) {
+        if (fromDate && toDate && singlebike?.fooditem?.price) {
             const from = new Date(fromDate);
             const to = new Date(toDate);
             const days = (to - from) / (1000 * 60 * 60 * 24);
-            const total = days * singlebike.price;
+            const total = days * singlebike?.fooditem?.price;  // Accessing price from fooditem
             setTotalPrice(total > 0 ? total : 0); 
         }
     };
@@ -36,11 +43,15 @@ const MakePayment = () => {
         calculatePrice();
     }, [fromDate, toDate, singlebike]);
 
-    const handlePayment = () => {
-     
+    const handleRental = () => {
+        dispatch(AddRental(id, totalPrice))
         console.log("Total Price: Rs", totalPrice);
         
     };
+
+    if(totalPrice === 0){
+
+    }
 
 
   return (
@@ -50,14 +61,14 @@ const MakePayment = () => {
 
         <div className="payment-bike-info">
             <div className="bike-img">
-                <img src={singlebike && singlebike?.image} alt="bike image" />
+                <img src={singlebike && singlebike?.fooditem?.image} alt="bike image" />
             </div>
             <div className="bike-desc">
-                <p>name: {singlebike && singlebike?.name}</p>
-                <p>serial number: {singlebike && singlebike?.serialNumber}</p>
-                <p>description: {singlebike && singlebike?.description}</p>
-                <p>price: {singlebike && singlebike?.price}</p>
-                <p>bike type: {singlebike && singlebike?.bikeType}</p>
+                <p>name: {singlebike && singlebike?.fooditem?.name}</p>
+                <p>serial number: {singlebike && singlebike?.fooditem?.serialNumber}</p>
+                <p>description: {singlebike && singlebike?.fooditem?.description}</p>
+                <p>price: {singlebike && singlebike?.fooditem?.price}</p>
+                <p>bike type: {singlebike && singlebike?.fooditem?.bikeType}</p>
             </div>
         </div>
 
@@ -69,9 +80,27 @@ const MakePayment = () => {
                         <input type="date" value={toDate} onChange={(e) => setToDate(e.target.value)} />
                         <p>Total Price: <span>Rs {totalPrice}</span></p>
                     </div>
-                    <button onClick={handlePayment}>Make Payment</button>
+                    <button onClick={handleRental}>Make Payment</button>
                 </div>
       
+
+             
+ {/* <form action="https://rc-epay.esewa.com.np/api/epay/main/v2/form" method="POST">
+ <input type="text" id="amount" name="amount" value={totalPrice} required/>
+ <input type="text" id="tax_amount" name="tax_amount" value ="0" required/>
+ <input type="text" id="total_amount" name="total_amount" value={totalPrice} required/>
+ <input type="text" id="transaction_uuid" name="transaction_uuid" value={uuid} required/>
+ <input type="text" id="product_code" name="product_code" value ="EPAYTEST" required/>
+ <input type="text" id="product_service_charge" name="product_service_charge" value="0" required/>
+ <input type="text" id="product_delivery_charge" name="product_delivery_charge" value="0" required/>
+ <input type="text" id="success_url" name="success_url" value="https://esewa.com.np" required/>
+ <input type="text" id="failure_url" name="failure_url" value="https://google.com" required/>
+ <input type="text" id="signed_field_names" name="signed_field_names" value="total_amount,transaction_uuid,product_code" required/>
+ <input type="text" id="signature" name="signature" value={signature} required/>
+ <button type="submit">make payment</button>
+ </form> */}
+
+ 
     </div>
 
     </UserContainer>

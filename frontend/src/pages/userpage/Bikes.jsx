@@ -20,7 +20,7 @@ const Bikes = () => {
     },[])
   
     const handleRent = (id)=>{
-      navigate(`payment/${id}`)
+      navigate(`/payment/${id}`)
     }
   return (
     <UserContainer>

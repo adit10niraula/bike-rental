@@ -48,10 +48,10 @@ const adminlogin = AsyncHandler(async(req, res)=>{
 
     const {accessToken, refreshToken} = await generateAccessRefreshToken(user._id)
 
-    const options = {
-        httpOnly:true,
-        secure:true
-    }
+    // const options = {
+    //     httpOnly:true,
+    //     secure:true
+    // }
 
 
     return res.status(200)

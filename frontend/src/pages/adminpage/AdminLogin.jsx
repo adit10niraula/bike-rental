@@ -13,15 +13,20 @@ const AdminLogin = () => {
   const [password, setpassword] = useState('');
   const {adminData, loading, error} = useSelector((state)=>state.adminlogin)
   
-  // useEffect(() => {
-  //   if (adminData) {
-  //     navigate('/admin');
-  //   }
-  // }, [adminData, navigate]);
+  useEffect(() => {
+    if (adminData) {
+      navigate('/admin');
+    }
+  }, [adminData, navigate]);
+
+
 
   const handleAdminLogin = (e) => {
     e.preventDefault();
     dispatch(adminlogin({ email, password }));
+
+   
+    
   };
   return (
     <section className='main'>

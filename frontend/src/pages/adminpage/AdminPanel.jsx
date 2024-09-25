@@ -1,8 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import AdminContainer from '../../component/container/AdminContainer'
 import './adminpane.css'
+import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 const AdminPanel = () => {
+  const navigate = useNavigate()
+
+  const {adminData, loading, error} = useSelector((state)=>state.adminlogin)
+
+  useEffect(()=>{
+
+    if(!adminData){
+      navigate('/adminlogin')
+    }
+  },[adminData, navigate])
+
+  // useEffect(()=>{
+
+  //   if(!adminData){
+  //     navigate('/adminlogin')
+  //   }
+  // },[useSelector,navigate])
   return (
     <AdminContainer>
     <div className='admin-panel-cont'>

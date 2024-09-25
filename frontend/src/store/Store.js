@@ -2,6 +2,7 @@ import {combineReducers, configureStore} from '@reduxjs/toolkit'
 import { getBikeReducer,BikeDetailReducer } from '../reducers/BikeReducer'
 import { registerUserReducer, LoginUserReducer, getCurrenUserReducer ,DisplayUserReducer} from '../reducers/UserReducer'
 import { adminLoginReducer,BikeDeleteReducer,AddBikeReducer,editBikeReducer } from '../reducers/AdminReducer'
+import { AddRentalReducer } from '../reducers/RentalReducer'
 
 
 const rootReducer = combineReducers({
@@ -12,6 +13,8 @@ const rootReducer = combineReducers({
     loginuser:LoginUserReducer,
     registeruser:registerUserReducer,
     getcurrentuser: getCurrenUserReducer,
+
+    addrental:AddRentalReducer,
 
 
     adminlogin:adminLoginReducer,

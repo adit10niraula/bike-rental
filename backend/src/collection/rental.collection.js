@@ -7,10 +7,13 @@ import { User } from "../models/user.model.js"
 
 // 1. Create a Rental
 const createRental = AsyncHandler(async (req, res) => {
-    const { user_id, bike_id, start_time, end_time, total_cost } = req.body;
+    const { bike_id, total_cost, payment_status="pending" } = req.body;
+    console.log("trying backend")
 
-    // Validate User
-    const user = await User.findById(user_id);
+    const user = req.user
+    console.log("user",user)
+    
+    
     if (!user) {
         throw new ApiError(404, "User not found");
     }
@@ -28,12 +31,14 @@ const createRental = AsyncHandler(async (req, res) => {
 
     // Create the rental
     const rental = new Rental({
-        user_id,
-        bike_id,
-        start_time,
-        end_time,
-        total_cost,
+        user_id:user,
+        bike_id:bike,
+        
+        total_cost:total_cost,
+        payment_status:payment_status
     });
+
+    console.log("createing rental")
 
     // Save the rental
     await rental.save();
@@ -123,10 +128,4 @@ const deleteRental = AsyncHandler(async (req, res) => {
     res.status(200).json(new ApiResponse(200, null, "Rental deleted successfully"));
 });
 
-module.exports = {
-    createRental,
-    getAllRentals,
-    getRentalById,
-    updateRental,
-    deleteRental,
-};
+export {createRental, updateRental,deleteRental,getRentalById, getAllRentals}

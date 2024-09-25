@@ -5,8 +5,9 @@ import { ApiError } from "../utils/ErrorHandler.js"
 //import { isValidObjectId, Query } from "mongoose"
 import { uploadToCoudinary } from "../utils/CloudinaryUpload.js"
 import { BikeType } from "../models/bikeType.model.js"
-import { Location } from "../models/location.model.js"
-
+import { Location } from "../models/location.model.js" 
+import { v4 as uuidv4 } from 'uuid';
+import CryptoJS from 'crypto-js'; 
 
 
 
@@ -175,11 +176,17 @@ const getSingleItem = AsyncHandler(async(req, res)=>{
     if(!id){
         throw new ApiError(400, "provided id is  not a vlaid object is")
     }
-    
+    const uuid = uuidv4()
     const fooditem = await Bike.findById(id).populate('bikeType')
+    const message = `total_amount=${fooditem?.price},transaction_uuid=${uuid},product_code=EPAYTEST`
+    const hash = CryptoJS.HmacSHA256(message, process.env.ESEWASECRET)
+    const hashInBase64 = CryptoJS.enc.Base64.stringify(hash)
 
+    console.log("uuid,",uuid ,"message", message, "hash",hash, "hashin64", hashInBase64)
 
-    return res.status(200).json(new ApiResponse(200, fooditem, "getting single data"))
+   
+
+    return res.status(200).json(new ApiResponse(200, {fooditem, uuid, message,hash, hashInBase64}, "getting single data"))
 
 
 

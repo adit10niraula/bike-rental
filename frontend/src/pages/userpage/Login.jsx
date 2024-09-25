@@ -17,6 +17,11 @@ const Login = () => {
     const handleLogin = (e)=>{
         e.preventDefault()
          dispatch(UserLogin(email, password))
+
+         if(!error){
+            
+            navigate('/')
+        }
         
     }
 

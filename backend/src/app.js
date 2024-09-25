@@ -28,7 +28,7 @@ import rentalRouter from "./models/rental.model.js";
 app.use('/api/v1/user', userRouter)
 app.use('/api/v1/admin', adminRouter)
 app.use('/api/v1/bike', bikeRouter)
-app.use('/api/v1/router', rentalRouter)
+app.use('/api/v1/rent', rentalRouter)
 
 export{app}
 
