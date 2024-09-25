@@ -23,18 +23,26 @@ export const UserRegister = (name, email, password, address, contact)=> async(di
 }
 
 
-export const UserLogin = (email, password)=> async(dispatch)=>{
-    dispatch({type:LOGIN_USER_REQUEST})
+export const UserLogin = (email, password) => async(dispatch)=>{
+    dispatch({type:LOGIN_USER_REQUEST, payload:{email, password}})
 
-    try{
+    try {
         const {data} = await axios.post('/api/v1/user/login', {email, password})
-        dispatch({type:LOGIN_USER_SUCCESS, payload:data.data})
-        console.log("user", data)
 
-    }catch(error){
-        console.log("error", error)
-        dispatch({type: LOGIN_USER_FAIL, payload:error.response && error.response?.data.message ?
-           error.response?.data.message : error.message})
+        
+        dispatch({type:LOGIN_USER_SUCCESS, payload:data.data})
+        
+        localStorage.setItem('userInfo', JSON.stringify(data.data.user));
+        localStorage.setItem('accessToken', data.data.accessToken);
+        localStorage.setItem('refreshToken', data.data.refreshToken);
+
+    localStorage.setItem("name", "rajkumar")
+        
+        
+    } catch (error) {
+
+        dispatch({type:LOGIN_USER_FAIL, payload: error.response && error.response.data.message? error.response.data.message : error.message})
+        
     }
 }
 

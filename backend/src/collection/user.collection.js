@@ -188,17 +188,17 @@ const loginUser = AsyncHandler(async(req, res)=>{
         throw new ApiError(400, "user is not logged in ")
     }
 
-        // const options = {
-        //     httpOnly:true,
-        //     secure:true
-        // }
+        const options = {
+            httpOnly:true,
+            secure:true
+        }
 
     
 
 
     return res.status(200)
-    // .cookie("accessToken", accessToken, options)
-    // .cookie("refreshToken", refreshToken, options)
+    .cookie("accessToken", accessToken, options)
+    .cookie("refreshToken", refreshToken, options)
     .json(new ApiResponse(200, {user: loggedInUser, accessToken, refreshToken}, "user logged in success"))
 })
 
