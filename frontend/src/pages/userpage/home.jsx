@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { GetBike } from '../../actions/BIkeAction'
 import { Bikedetail } from '../../actions/BIkeAction'
 import { useNavigate } from 'react-router-dom'
+import "./home.css"
 
 const Home = () => {
   const navigate = useNavigate()
@@ -23,7 +24,11 @@ const Home = () => {
   }
   return (
     <UserContainer>
-    <div>
+        <div className="banner">
+      <img src="img/banner.png" alt="Bike Rental Banner" className="banner-img" />
+      </div >
+    <div className='latest-bike'>
+    <h2>Latest Bike</h2>
     <AllBikeLIst bikes = {bikes} handleRent={handleRent}/>
     </div>
     </UserContainer>
