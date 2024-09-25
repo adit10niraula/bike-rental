@@ -1,0 +1,23 @@
+    
+    /* Styling for the Order List */
+    .order-list {
+        margin-left: 470px;
+
+    }
+    
+    .order-card {
+        background-color: white;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .order-card p {
+        margin: 10px 0;
+    }
+    
+    .order-card p span {
+        font-weight: bold;
+    }
+    

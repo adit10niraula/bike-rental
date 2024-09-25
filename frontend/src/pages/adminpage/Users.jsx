@@ -24,13 +24,10 @@ const Users = () => {
         <h1>user</h1>
          <div className='admin-user-container'>
           {UserData && UserData.map((user)=>( <div key={user._id} className='admin-singleuser'>
-          <div className="user-image-profile">
-            <img  src={user.profile} alt="" />
-          </div>
-          <p >{user.name}</p>
-          <p >{user.email}</p>
-          <p className=''>{user.address}</p>
-          <p>{user.contact}</p>
+          <p>Name: {user.name}</p>
+          <p>Email: {user.email}</p>
+          <p>Address: {user.address}</p>
+          <p>Contact Us: {user.contact}</p>
           
           
            </div>

@@ -3,6 +3,7 @@ import AdminContainer from '../../component/container/AdminContainer'
 import { getOrders } from '../../actions/RentalAction'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import "./order.css"
 
 const Orders = () => {
     const dispatch = useDispatch()
@@ -26,7 +27,7 @@ const Orders = () => {
   return (
     <AdminContainer>
     
-    <div>
+    <div className="order-list">
       <h1>orders</h1>
 
       {orders && orders.map((order)=>(

@@ -11,13 +11,17 @@
 .admin-user-container {
     padding: 20px;
     font-family: "Poppins", sans-serif;
-    margin-left: 270px; /* Assuming there’s a left sidebar */
+    margin-left: 370px;
+    border: solid 1px #c0c0c0;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }
   
   /* Table styling */
   .admin-user-table {
     width: 100%;
-    border-collapse: collapse; /* Remove gaps between table cells */
+    border-collapse: collapse; 
     background-color: #ffffff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
