@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { GetBike } from '../../actions/BIkeAction'
 import { Bikedetail } from '../../actions/BIkeAction'
 import { useNavigate } from 'react-router-dom'
+import "./bike.css"
 
 const Bikes = () => {
     const navigate = useNavigate()
@@ -23,8 +24,11 @@ const Bikes = () => {
     }
   return (
     <UserContainer>
+      <div className='all-bike'>
+      <h2>All bikes</h2>
+      </div>
     <div>
-        <h1>all bikes</h1>
+        
     <AllBikeLIst bikes = {bikes} handleRent={handleRent}/>
     </div>
     </UserContainer>
