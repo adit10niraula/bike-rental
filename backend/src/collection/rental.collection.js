@@ -50,9 +50,11 @@ const addToCart = AsyncHandler(async(req, res)=>{
 })
 
 const makePayment = AsyncHandler(async(req, res)=>{
-  
+    const {id} = req.params
+    console.log("id",id)
     const uuid = uuidv4()
-    const fooditem = await Rent.findById()
+    const fooditem = await Rent.findById(id)
+    console.log("fooditem", fooditem)
     const message = `total_amount=${fooditem?.price},transaction_uuid=${uuid},product_code=EPAYTEST`
     const hash = CryptoJS.HmacSHA256(message, process.env.ESEWASECRET)
     const hashInBase64 = CryptoJS.enc.Base64.stringify(hash)
@@ -63,8 +65,13 @@ const makePayment = AsyncHandler(async(req, res)=>{
 
     return res.status(200).json(new ApiResponse(200, {fooditem, uuid, message,hash, hashInBase64}, "getting single data"))
 
-
-
 })
 
-export {addToCart, makePayment}
+const getAllRental = AsyncHandler(async(req,res)=>{
+
+    const orders = await Rent.find()
+
+    return res.status(200).json(new ApiResponse(200, orders, "success"))
+})
+
+export {addToCart, makePayment,getAllRental}

@@ -47,7 +47,7 @@ const MakePayment = () => {
 
     useEffect(()=>{
             if(rental){
-                navigate(`confirm/`)
+                navigate(`confirm/${rental._id}`)
             }
     },[rental,navigate])
     const handleRental = () => {

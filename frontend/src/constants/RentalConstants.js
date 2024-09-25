@@ -16,4 +16,9 @@ export const PAYMENT_REQUEST = "PAYMENT_REQUEST"
 export const PAYMENT_SUCCESS = "PAYMENT_SUCCESS"
 export const PAYMENT_FAIL = "PAYMENT_FAIL"
 
+export const ORDER_REQUEST = "ORDER_REQUEST"
+export const ORDER_SUCCESS = "ORDER_SUCCESS"
+export const ORDER_FAIL = "ORDER_FAIL"
+
+
 
