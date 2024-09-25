@@ -13,14 +13,14 @@ const rentSchema = new Schema({
         type:Schema.Types.ObjectId,
         ref:User
     },
-   totalprice :{
+totalprice :{
     type:String,
 
-   },
-   payment:{
+},
+payment:{
     type:String,
     default:"pending"
-   }
+}
 }) 
 
 
